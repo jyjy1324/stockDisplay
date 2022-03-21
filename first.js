@@ -1,8 +1,12 @@
-console.log("퍼스트파일")
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
 
-let x = 13;
-while(x>5)
-{
-console.log("계속돌아감");
+let app = express();
 
-}
+app.use([morgan(),cors(),helmet()])
+
+
+app.listen(8888);
+console.log("8888서버 스타트");
